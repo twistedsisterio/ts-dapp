@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <video
-                src="https://twistedsister.io/twistedsisterio-fysaveasguys.mp4"
+                src="/twistedsisterio-fysaveasguys.MP4"
                 type="video/mp4"
                 autoplay
                 loop
