@@ -15,10 +15,9 @@
 
     <h1 class="mb-4">About</h1>
     <p class="text-large mb-6">Twistedsister is the eponymous name of a Switzerland-based temporary collective of
-      artists and designers investigating the potentials of digital technologies and their cultural impact.
-      Twistedsister is <a target="_blank" href="https://studio.arminblasbichler.com">Armin Blasbichler</a>, <a
+      artists and designers investigating the potentials of digital technologies. Twistedsister is <a target="_blank" href="https://arminblasbichler.com">Armin Blasbichler</a>, <a
           target="_blank" href="https://www.brigittefaessler.com">Brigitte Fässler</a>, <a target="_blank"
-                                                                                           href="https://www.schreibtgenau.ch">Martina
+                                                                                           href="https://www.martina-graf.com">Martina
         Graf</a>, <a target="_blank" href="https://julianhumm.com">Julian Humm</a> and <a target="_blank"
                                                                                           href="http://www.deixis.ch">Matthias
         Pfäffli</a>.</p>
@@ -41,43 +40,9 @@
       </div>
 
       <div class="col-12 col-md-3 text-center mb-2">
-        <span><a href="https://www.facebook.com/twistedsister.io/" target="_blank"
-                 class="btn btn-secondary text-white w-100">Facebook</a></span>
+        <span><a href="https://knownorigin.io/twistedsisterio" target="_blank"
+                 class="btn btn-secondary text-white w-100">KnownOrigin</a></span>
       </div>
-
-    </div>
-
-
-    <div class="row mb-6">
-
-      <div class="col-12 col-md-3 text-center mb-2">
-    		<span>
-          <a href="https://knownorigin.io/twistedsisterio" target="_blank" class="btn btn-secondary text-white w-100">
-            knownorigin.io
-          </a>
-        </span>
-      </div>
-
-      <div class="col-12 col-md-3 text-center mb-2">
-        <span>
-          <a
-              href="https://ipfs.globalupload.io/QmZHi11L4HzdP41L8KqSPvptmjsvkGqrHpXG9hJqg3JCsT"
-              target="_blank"
-              class="btn btn-light w-100">
-            Pressemitteilung
-          </a>
-        </span>
-      </div>
-
-      <div class="col-12 col-md-3 text-center mb-2">
-        <span>
-          <a
-              href="https://ipfs.globalupload.io/QmXWSuMrqi6oBWsXadGSbiRGbFiZsertn43JQUB8mud8Z7"
-              target="_blank"
-             class="btn btn-light w-100">Press Release</a>
-        </span>
-      </div>
-
 
     </div>
 
