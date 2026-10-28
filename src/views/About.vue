@@ -26,12 +26,12 @@
     <div class="row mb-6">
 
       <div class="col-12 col-md-3 text-center mb-2">
-        <span><a href="mailto:hello@twistedsister.io" target="_blank"
+        <span><a href="mailto:twistedsisterart@proton.me" target="_blank"
                  class="btn btn-secondary text-white w-100">Email</a></span>
       </div>
 
       <div class="col-12 col-md-3 text-center mb-2">
-        <span><a href="https://twitter.com/twistedsisterio" target="_blank" class="btn btn-secondary text-white w-100">Twitter</a></span>
+        <span><a href="https://x.com/twistedsisterio" target="_blank" class="btn btn-secondary text-white w-100">X</a></span>
       </div>
 
       <div class="col-12 col-md-3 text-center mb-2">
