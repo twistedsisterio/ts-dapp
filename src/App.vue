@@ -30,7 +30,7 @@
                                     to="/disclaimer">Disclaimer</router-link></span>
 
                     <span class="footer-link d-block d-md-inline">dApp by: <a href="https://blockrocket.tech"
-                                                                              target="_blank">BlockRocket</a></span>
+                                                                              target="_blank">BlockRocket</a>, 2019</span>
 
                     <span class="footer-link d-block d-md-inline">Ethereum Network: {{currentNetwork}}</span>
                  </span>
