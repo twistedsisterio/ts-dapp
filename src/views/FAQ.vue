@@ -106,7 +106,7 @@
 
         <FAQContainer>
             <template v-slot:header>
-                Automated funds distribution, say what?
+                Royalties?
             </template>
             <template v-slot:body>
                 <p>The twistedsister.io marketplace has been devised with a fair future value attribution in mind. For each sale of a <a href="https://etherscan.io/token/0x62acB9A3eCDC880Dc8AB6DFD6cF48CA07ed10De4">TWIST</a> token, 20% of the money will equally be split among the <a href="https://etherscan.io/token/0x62acB9A3eCDC880Dc8AB6DFD6cF48CA07ed10De4">TWIST</a> token holders, and 10% will equally be split among the artists.</p>
