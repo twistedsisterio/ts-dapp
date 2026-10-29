@@ -1,3 +1,15 @@
+[build]
+  # npm ci installs exactly what's in package-lock.json. Plain `npm install`
+  # would try to re-resolve ipfs-http-client's deleted concat-stream fork.
+  command = "npm ci && npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Vue CLI 3 / webpack 4 / node-sass 4.12 only build on Node 12
+  NODE_VERSION = "12"
+  # Skip Netlify's automatic `npm install` (we run `npm ci` above instead)
+  NPM_FLAGS = "--prefix=/dev/null"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
