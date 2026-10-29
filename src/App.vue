@@ -13,9 +13,7 @@
                         <router-link to="/marketplace" exact>Marketplace</router-link>&nbsp;
                         <router-link to="/faq">FAQ</router-link>
                         <router-link to="/about">About</router-link>
-                        <button v-if="!account" class="btn btn-secondary btn-sm text-white ml-3" @click="connect">
-                            Connect Wallet
-                        </button>
+                        <a v-if="!account" href="#" @click.prevent="connect">Connect Wallet</a>
                     </div>
                 </div>
             </div>
