@@ -13,6 +13,9 @@
                         <router-link to="/marketplace" exact>Marketplace</router-link>&nbsp;
                         <router-link to="/faq">FAQ</router-link>
                         <router-link to="/about">About</router-link>
+                        <button v-if="!account" class="btn btn-secondary btn-sm text-white ml-3" @click="connect">
+                            Connect Wallet
+                        </button>
                     </div>
                 </div>
             </div>
@@ -46,22 +49,42 @@
 
     @Component({
         computed: {
-            ...mapGetters(['networkName'])
+            ...mapGetters(['networkName', 'account'])
         }
     })
     export default class App extends Vue {
         networkName!: string;
+        account!: string;
 
-        async created() {
+        // On load, only pick up an already-authorised account (no MetaMask popup)
+        created() {
+            this.initWeb3('eth_accounts');
+        }
+
+        // Ask for wallet access only when the user clicks "Connect Wallet"
+        connect() {
             // @ts-ignore
-            await window.ethereum.request({ method: 'eth_requestAccounts' });
+            if (!window.ethereum) {
+                window.open('https://metamask.io/', '_blank');
+                return;
+            }
+            this.initWeb3('eth_requestAccounts');
+        }
+
+        async initWeb3(method: string) {
             // @ts-ignore
-            const provider: any = new ethers.providers.Web3Provider(window.ethereum);
-            const signer = provider.getSigner();
-
-            const {chainId} = await provider.getNetwork();
-
-            await this.$store.dispatch('bootstrapWeb3', {provider, signer, chainId});
+            const ethereum = window.ethereum;
+            if (!ethereum) return;
+            try {
+                const accounts = await ethereum.request({ method });
+                const provider: any = new ethers.providers.Web3Provider(ethereum);
+                // Without an account, use the provider so read-only calls still work
+                const signer = accounts.length ? provider.getSigner() : provider;
+                const {chainId} = await provider.getNetwork();
+                await this.$store.dispatch('bootstrapWeb3', {provider, signer, chainId});
+            } catch (e) {
+                console.warn('Wallet connection failed or was rejected', e);
+            }
         }
 
         get currentNetwork() {

@@ -59,6 +59,7 @@
     import moment from 'moment';
     import _ from 'lodash';
     import axios from 'axios';
+    import { ipfsUrl } from '@/utils/utils';
     import { ethers } from 'ethers';
     import { mapGetters } from 'vuex';
     import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
@@ -90,9 +91,9 @@
 
         async mounted() {
             const {TwistedSisterToken} = this.contracts;
-            this.ipfsTokenDataUrl = await TwistedSisterToken.tokenURI(Number(this.round._round));
+            this.ipfsTokenDataUrl = ipfsUrl(await TwistedSisterToken.tokenURI(Number(this.round._round)));
             const ipfsTokenData: any = await axios.get(this.ipfsTokenDataUrl);
-            this.ipfsImageUrl = ipfsTokenData.data.image;
+            this.ipfsImageUrl = ipfsUrl(ipfsTokenData.data.image);
         }
 
         get openSeaUrl(): string {

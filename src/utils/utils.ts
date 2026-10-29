@@ -25,3 +25,11 @@ export async function fetchEvents(eventName: string, contract: any, provider: an
         return parsedEvent.values;
     });
 }
+// ipfs.io blocks requests coming from websites (403/429), so serve IPFS
+// content through another public gateway. The URLs stored on-chain and in
+// the token metadata still point at ipfs.io, so they are rewritten here.
+export const IPFS_GATEWAY = 'https://gateway.pinata.cloud/ipfs/';
+
+export function ipfsUrl(url: string): string {
+    return url ? url.replace(/^https?:\/\/(gateway\.)?ipfs\.io\/ipfs\//, IPFS_GATEWAY) : url;
+}

@@ -18,8 +18,7 @@
             </div>
         </div>
         <div v-else class="container text-center text-danger text-large">
-            Please install and unlock a Web3 client such as <a href="https://metamask.io/">metamask.io</a> and refresh
-            the page.
+            Please connect your wallet (e.g. <a href="https://metamask.io/">MetaMask</a>) using the "Connect Wallet" button above.
         </div>
     </div>
 </template>

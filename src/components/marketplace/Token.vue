@@ -72,6 +72,7 @@
 
     import {mapGetters} from 'vuex';
     import axios from 'axios';
+    import {ipfsUrl} from '@/utils/utils';
     import {utils} from 'ethers';
 
     export default {
@@ -110,14 +111,10 @@
                     this.metadata.ipfsImageUrl = `https://robohash.org/${this.tokenId}.png`;
 
                     const {TwistedSisterToken} = this.contracts;
-                    const ipfsTokenDataUrl = await TwistedSisterToken.tokenURI(Number(this.tokenId));
+                    const ipfsTokenDataUrl = ipfsUrl(await TwistedSisterToken.tokenURI(Number(this.tokenId)));
 
-                    const ipfsTokenData = await axios.get(ipfsTokenDataUrl, {
-                        headers: {
-                            'Content-Type': 'application/json',
-                        }
-                    });
-                    this.metadata.ipfsImageUrl = ipfsTokenData.data.image;
+                    const ipfsTokenData = await axios.get(ipfsTokenDataUrl);
+                    this.metadata.ipfsImageUrl = ipfsUrl(ipfsTokenData.data.image);
                 } catch(e) {
                     console.log(`Failed to fetch IPFS image for ${this.tokenId}`)
                 }
